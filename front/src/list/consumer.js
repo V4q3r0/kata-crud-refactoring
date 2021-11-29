@@ -8,15 +8,16 @@ export default {
     save: async (request) => {
         return fetch(HOST_API + "listTodo", {
             method: "POST",
-            body: JSON.stringify(request),
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify(request)
         })
         .catch(error => console.error('Error:', error))
     },
     delete: async (listId) => {
-        return fetch(HOST_API + listId + "/listTodo", {
+        return fetch(HOST_API + "listTodo/" + listId, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'

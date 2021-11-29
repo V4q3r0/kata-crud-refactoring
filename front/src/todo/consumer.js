@@ -1,13 +1,13 @@
 const HOST_API = "http://localhost:8080/api/"
 export default {
     findAll : async (listId) => {
-        return fetch(HOST_API + listId+"/todos")
+        return fetch(HOST_API + listId + "/todos")
             .catch(error => console.error('Error:', error))
 
     },
 
     save : async (listId, request) => {
-        return fetch(HOST_API + listId+"todo", {
+        return fetch(HOST_API + "todo", {
             method: "POST",
             body: JSON.stringify(request),
             headers: {
@@ -31,7 +31,7 @@ export default {
     },
 
     delete : async (id) => {
-        return fetch(HOST_API + id+"/todo", {
+        return fetch(HOST_API + "todo/ " +id, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json'
