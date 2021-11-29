@@ -5,10 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 @RestController
-@CrossOrigin(origins = {"${settings.cors_origin}"})
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api")
 public class TodoController {
 
